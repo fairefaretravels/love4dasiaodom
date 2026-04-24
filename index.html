@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Celebrating Dasia Odom – Food Sign-Up</title>
+<title>Celebrating Dasia Odom – Live Food Sign-Up</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,459 +18,164 @@
     --border: #d0e8d8;
     --gold: #c9a84c;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); min-height: 100vh; color: var(--dark); }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    min-height: 100vh;
-    color: var(--dark);
-  }
-
-  /* ── HERO HEADER ── */
   .hero {
     background: linear-gradient(160deg, #0d2b1a 0%, #1a4a2e 40%, #2d7a4a 100%);
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 0;
+    position: relative; overflow: hidden; padding-bottom: 0;
   }
-
   .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background-image: radial-gradient(ellipse at 80% 50%, rgba(74,175,107,0.15) 0%, transparent 60%),
                       radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.1) 0%, transparent 50%);
   }
-
   .hero-inner {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
+    max-width: 760px; margin: 0 auto; padding: 40px 24px 0;
+    display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;
   }
-
   .memorial-tag {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: #e8d48a;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 6px 20px;
-    border-radius: 100px;
-    margin-bottom: 28px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(201,168,76,0.4);
+    color: #e8d48a; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    padding: 6px 20px; border-radius: 100px; margin-bottom: 28px; font-weight: 500;
   }
-
   .photo-frame {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 140px; height: 140px; border-radius: 50%; overflow: hidden;
     border: 4px solid var(--gold);
     box-shadow: 0 0 0 8px rgba(201,168,76,0.15), 0 20px 60px rgba(0,0,0,0.4);
     margin-bottom: 24px;
-    flex-shrink: 0;
   }
-
-  .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-  }
-
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
   .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(38px, 8vw, 56px);
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    line-height: 1;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 8vw, 56px);
+    font-weight: 700; color: #fff; text-align: center; line-height: 1; margin-bottom: 8px;
   }
+  .hero-dates { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--sage); font-size: 18px; margin-bottom: 6px; text-align: center; }
+  .hero-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(200,236,212,0.8); font-size: 15px; text-align: center; max-width: 380px; line-height: 1.6; margin-bottom: 36px; }
 
-  .hero-dates {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: var(--sage);
-    font-size: 18px;
-    margin-bottom: 6px;
-    text-align: center;
+  .live-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
   }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #4cff80;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
 
-  .hero-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: rgba(200,236,212,0.8);
-    font-size: 15px;
-    text-align: center;
-    max-width: 380px;
-    line-height: 1.6;
-    margin-bottom: 36px;
-  }
+  .wave { width: 100%; display: block; margin-top: 8px; }
 
-  .wave {
-    width: 100%;
-    display: block;
-    margin-top: 8px;
-  }
-
-  /* ── MAIN CONTENT ── */
-  .content {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
+  .content { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
 
   .intro-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin: 32px 0 28px;
-    border-left: 5px solid var(--money);
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px 28px; margin: 32px 0 28px; border-left: 5px solid var(--money);
     box-shadow: 0 4px 20px rgba(26,74,46,0.07);
   }
+  .intro-card p { font-size: 14.5px; color: #3a5a45; line-height: 1.75; }
 
-  .intro-card p {
-    font-size: 14.5px;
-    color: #3a5a45;
-    line-height: 1.75;
-  }
-
-  /* ── STATS BAR ── */
-  .stats-bar {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
+  .stats-bar { display: flex; gap: 12px; margin-bottom: 28px; }
   .stat {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 20px;
-    flex: 1;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(26,74,46,0.05);
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 20px; flex: 1; text-align: center; box-shadow: 0 2px 10px rgba(26,74,46,0.05);
   }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--money); display: block; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
 
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--money);
-    display: block;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 500;
-  }
-
-  /* ── CATEGORIES ── */
-  .categories {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  }
-
+  .categories { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
   .cat-btn {
-    background: var(--white);
-    border: 2px solid var(--border);
-    border-radius: 100px;
-    padding: 8px 18px;
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
+    background: var(--white); border: 2px solid var(--border); border-radius: 100px;
+    padding: 8px 18px; font-size: 13px; font-family: 'DM Sans', sans-serif;
+    font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.2s;
   }
+  .cat-btn:hover, .cat-btn.active { background: var(--money); border-color: var(--money); color: #fff; }
 
-  .cat-btn:hover, .cat-btn.active {
-    background: var(--money);
-    border-color: var(--money);
-    color: #fff;
-  }
-
-  /* ── ADD FORM ── */
   .add-form {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    box-shadow: 0 4px 24px rgba(26,74,46,0.08);
-    position: relative;
-    overflow: hidden;
+    background: var(--white); border: 1px solid var(--border); border-radius: 20px;
+    padding: 28px; margin-bottom: 32px; box-shadow: 0 4px 24px rgba(26,74,46,0.08);
+    position: relative; overflow: hidden;
   }
-
   .add-form::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
     background: linear-gradient(to right, var(--forest), var(--mint));
   }
-
-  .form-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
+  .form-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--forest); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
   .form-group.full { grid-column: 1 / -1; }
-
-  label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
+  label { font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); }
   input, select, textarea {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    padding: 11px 14px;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    background: var(--cream);
-    color: var(--dark);
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    width: 100%;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 11px 14px;
+    border: 2px solid var(--border); border-radius: 10px; background: var(--cream);
+    color: var(--dark); transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%;
   }
-
   input:focus, select:focus, textarea:focus {
-    border-color: var(--money);
-    box-shadow: 0 0 0 3px rgba(45,122,74,0.1);
-    background: #fff;
+    border-color: var(--money); box-shadow: 0 0 0 3px rgba(45,122,74,0.1); background: #fff;
   }
-
   textarea { resize: none; height: 70px; }
-
   .submit-btn {
-    width: 100%;
-    background: linear-gradient(135deg, var(--forest), var(--money));
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 15px 24px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
+    width: 100%; background: linear-gradient(135deg, var(--forest), var(--money));
+    color: #fff; border: none; border-radius: 12px; padding: 15px 24px;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s;
     box-shadow: 0 4px 16px rgba(26,74,46,0.3);
   }
+  .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(26,74,46,0.4); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-  .submit-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(26,74,46,0.4);
-  }
+  .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--forest); }
+  .entry-count { font-size: 13px; color: var(--muted); }
 
-  .submit-btn:active { transform: translateY(0); }
-
-  /* ── ENTRIES LIST ── */
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--forest);
-  }
-
-  .entry-count {
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  .entries-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
+  .entries-list { display: flex; flex-direction: column; gap: 12px; }
   .entry-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 16px;
-    align-items: start;
-    box-shadow: 0 2px 10px rgba(26,74,46,0.05);
-    animation: slideIn 0.35s ease;
-    transition: box-shadow 0.2s;
+    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; display: grid; grid-template-columns: auto 1fr auto;
+    gap: 16px; align-items: start; box-shadow: 0 2px 10px rgba(26,74,46,0.05);
+    animation: slideIn 0.35s ease; transition: box-shadow 0.2s;
   }
-
   .entry-card:hover { box-shadow: 0 4px 18px rgba(26,74,46,0.1); }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
+  @keyframes slideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
   .entry-num {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--forest), var(--money));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0;
-    margin-top: 2px;
+    width: 36px; height: 36px; background: linear-gradient(135deg, var(--forest), var(--money));
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; margin-top: 2px;
   }
-
-  .entry-body {}
-
-  .entry-name {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--dark);
-    margin-bottom: 3px;
-  }
-
-  .entry-dish {
-    font-size: 14px;
-    color: var(--money);
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  .entry-meta {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    background: #e8f5ed;
-    color: var(--forest);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 3px 10px;
-    border-radius: 100px;
-    text-transform: uppercase;
-  }
-
-  .entry-note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 5px;
-    font-style: italic;
-  }
-
-  .entry-delete {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #ccc;
-    font-size: 18px;
-    padding: 4px;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
-    line-height: 1;
-  }
-
+  .entry-name { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+  .entry-dish { font-size: 14px; color: var(--money); font-weight: 500; margin-bottom: 4px; }
+  .entry-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tag { background: #e8f5ed; color: var(--forest); font-size: 11px; font-weight: 600; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 100px; text-transform: uppercase; }
+  .entry-note { font-size: 12px; color: var(--muted); margin-top: 5px; font-style: italic; }
+  .entry-delete { background: none; border: none; cursor: pointer; color: #ccc; font-size: 18px; padding: 4px; border-radius: 6px; transition: color 0.2s, background 0.2s; line-height: 1; }
   .entry-delete:hover { color: #e05555; background: #fff0f0; }
 
-  /* ── EMPTY STATE ── */
-  .empty-state {
-    text-align: center;
-    padding: 50px 20px;
-    color: var(--muted);
-    background: var(--white);
-    border: 2px dashed var(--border);
-    border-radius: 16px;
-  }
-
+  .empty-state { text-align: center; padding: 50px 20px; color: var(--muted); background: var(--white); border: 2px dashed var(--border); border-radius: 16px; }
   .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
   .empty-state p { font-size: 15px; line-height: 1.6; }
 
-  /* ── TOAST ── */
-  .toast {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background: var(--forest);
-    color: #fff;
-    padding: 14px 22px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    transform: translateY(80px);
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .loading-state { text-align: center; padding: 40px; color: var(--muted); }
+  .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--money); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 12px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
+  .toast { position: fixed; bottom: 28px; right: 28px; background: var(--forest); color: #fff; padding: 14px 22px; border-radius: 12px; font-size: 14px; font-weight: 500; box-shadow: 0 8px 30px rgba(0,0,0,0.2); transform: translateY(80px); opacity: 0; transition: all 0.3s ease; z-index: 999; }
   .toast.show { transform: translateY(0); opacity: 1; }
 
-  /* ── RESPONSIVE ── */
+  .refresh-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 12px; color: var(--muted); }
+  .refresh-btn { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 5px 12px; font-size: 12px; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+  .refresh-btn:hover { border-color: var(--money); color: var(--money); }
+  .last-updated { margin-left: auto; }
+
   @media (max-width: 520px) {
     .form-grid { grid-template-columns: 1fr; }
     .stats-bar { flex-wrap: wrap; }
     .stat { min-width: calc(50% - 6px); }
-    .entry-card { grid-template-columns: auto 1fr auto; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="memorial-tag">✦ Celebrating a Beautiful Life ✦</div>
@@ -480,40 +185,25 @@
     <h1 class="hero-name">Dasia Odom</h1>
     <p class="hero-dates">Forever in Our Hearts</p>
     <p class="hero-quote">"The memories we shared will live on through the love we carry."</p>
+    <div class="live-badge"><div class="live-dot"></div> LIVE — everyone sees the same list</div>
   </div>
   <svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,30 C360,70 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8fdf9"/>
   </svg>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
-
   <div class="intro-card">
     <p>We're coming together to celebrate the life of our beloved <strong>Dasia Odom</strong>. Please sign up below with your name and what you'd like to bring. Every dish is a labor of love — thank you for showing up for our family. 💚</p>
   </div>
 
-  <!-- STATS -->
   <div class="stats-bar">
-    <div class="stat">
-      <span class="stat-num" id="total-count">0</span>
-      <span class="stat-label">Signed Up</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num" id="mains-count">0</span>
-      <span class="stat-label">Main Dishes</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num" id="sides-count">0</span>
-      <span class="stat-label">Sides</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num" id="desserts-count">0</span>
-      <span class="stat-label">Desserts</span>
-    </div>
+    <div class="stat"><span class="stat-num" id="total-count">—</span><span class="stat-label">Signed Up</span></div>
+    <div class="stat"><span class="stat-num" id="mains-count">—</span><span class="stat-label">Main Dishes</span></div>
+    <div class="stat"><span class="stat-num" id="sides-count">—</span><span class="stat-label">Sides</span></div>
+    <div class="stat"><span class="stat-num" id="desserts-count">—</span><span class="stat-label">Desserts</span></div>
   </div>
 
-  <!-- FILTER -->
   <div class="categories" id="filter-btns">
     <button class="cat-btn active" onclick="filterEntries('all', this)">All</button>
     <button class="cat-btn" onclick="filterEntries('Main Dish', this)">🍽 Main Dish</button>
@@ -524,11 +214,8 @@
     <button class="cat-btn" onclick="filterEntries('Other', this)">✨ Other</button>
   </div>
 
-  <!-- ADD FORM -->
   <div class="add-form">
-    <div class="form-title">
-      <span>🌿</span> Add Your Name
-    </div>
+    <div class="form-title">🌿 Add Your Name</div>
     <div class="form-grid">
       <div class="form-group">
         <label>Your Name *</label>
@@ -558,59 +245,115 @@
         <textarea id="input-notes" placeholder="e.g. Contains nuts, gluten-free, vegetarian…"></textarea>
       </div>
     </div>
-    <button class="submit-btn" onclick="addEntry()">✦ Sign Me Up</button>
+    <button class="submit-btn" id="submit-btn" onclick="addEntry()">✦ Sign Me Up</button>
   </div>
 
-  <!-- ENTRIES -->
   <div class="section-header">
     <div class="section-title">Sign-Up List</div>
-    <div class="entry-count" id="entry-count-label">0 entries</div>
+    <div class="entry-count" id="entry-count-label">loading…</div>
+  </div>
+  <div class="refresh-bar">
+    <button class="refresh-btn" onclick="loadEntries()">↻ Refresh</button>
+    <span class="last-updated" id="last-updated"></span>
   </div>
   <div class="entries-list" id="entries-list">
-    <div class="empty-state" id="empty-state">
-      <div class="icon">🌿</div>
-      <p>No one has signed up yet.<br>Be the first to show your love!</p>
-    </div>
+    <div class="loading-state"><div class="spinner"></div><br>Loading sign-ups…</div>
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-  let entries = [];
+  let allEntries = [];
   let currentFilter = 'all';
+  const STORAGE_KEY = 'dasia_odom_signup_entries';
 
-  function addEntry() {
-    const name  = document.getElementById('input-name').value.trim();
-    const dish  = document.getElementById('input-dish').value.trim();
-    const cat   = document.getElementById('input-cat').value;
+  // ── STORAGE ──
+  async function saveEntries(entries) {
+    try {
+      await window.storage.set(STORAGE_KEY, JSON.stringify(entries), true);
+      return true;
+    } catch(e) {
+      console.error('Save error:', e);
+      return false;
+    }
+  }
+
+  async function fetchEntries() {
+    try {
+      const result = await window.storage.get(STORAGE_KEY, true);
+      if (result && result.value) {
+        return JSON.parse(result.value);
+      }
+      return [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  // ── LOAD ──
+  async function loadEntries() {
+    document.getElementById('last-updated').textContent = 'Refreshing…';
+    allEntries = await fetchEntries();
+    renderEntries();
+    updateStats();
+    const now = new Date();
+    document.getElementById('last-updated').textContent =
+      'Updated ' + now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  }
+
+  // ── ADD ──
+  async function addEntry() {
+    const name   = document.getElementById('input-name').value.trim();
+    const dish   = document.getElementById('input-dish').value.trim();
+    const cat    = document.getElementById('input-cat').value;
     const serves = document.getElementById('input-serves').value.trim();
-    const notes = document.getElementById('input-notes').value.trim();
+    const notes  = document.getElementById('input-notes').value.trim();
 
     if (!name) { showToast('⚠️ Please enter your name.'); return; }
     if (!dish)  { showToast('⚠️ Please enter what you\'re bringing.'); return; }
 
-    entries.push({ id: Date.now(), name, dish, cat, serves, notes });
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Saving…';
 
-    // Clear form
-    document.getElementById('input-name').value = '';
-    document.getElementById('input-dish').value = '';
-    document.getElementById('input-serves').value = '';
-    document.getElementById('input-notes').value = '';
+    // Reload first to avoid overwriting someone else's concurrent entry
+    const latest = await fetchEntries();
+    const newEntry = { id: Date.now(), name, dish, cat, serves, notes, ts: new Date().toISOString() };
+    latest.push(newEntry);
 
-    renderEntries();
-    updateStats();
-    showToast('💚 You\'re on the list, ' + name + '!');
+    const ok = await saveEntries(latest);
+    if (ok) {
+      allEntries = latest;
+      document.getElementById('input-name').value = '';
+      document.getElementById('input-dish').value = '';
+      document.getElementById('input-serves').value = '';
+      document.getElementById('input-notes').value = '';
+      renderEntries();
+      updateStats();
+      showToast('💚 You\'re on the list, ' + name + '!');
+    } else {
+      showToast('❌ Could not save. Please try again.');
+    }
+
+    btn.disabled = false;
+    btn.textContent = '✦ Sign Me Up';
   }
 
-  function deleteEntry(id) {
-    entries = entries.filter(e => e.id !== id);
-    renderEntries();
-    updateStats();
-    showToast('Entry removed.');
+  // ── DELETE ──
+  async function deleteEntry(id) {
+    const latest = await fetchEntries();
+    const updated = latest.filter(e => e.id !== id);
+    const ok = await saveEntries(updated);
+    if (ok) {
+      allEntries = updated;
+      renderEntries();
+      updateStats();
+      showToast('Entry removed.');
+    }
   }
 
+  // ── FILTER ──
   function filterEntries(filter, btn) {
     currentFilter = filter;
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
@@ -618,71 +361,78 @@
     renderEntries();
   }
 
+  // ── RENDER ──
   function renderEntries() {
     const list = document.getElementById('entries-list');
-    const empty = document.getElementById('empty-state');
     const countLabel = document.getElementById('entry-count-label');
 
     const filtered = currentFilter === 'all'
-      ? entries
-      : entries.filter(e => e.cat === currentFilter);
+      ? allEntries
+      : allEntries.filter(e => e.cat === currentFilter);
 
-    if (entries.length === 0) {
-      empty.style.display = 'block';
-    } else {
-      empty.style.display = 'none';
+    list.innerHTML = '';
+
+    if (allEntries.length === 0) {
+      list.innerHTML = '<div class="empty-state"><div class="icon">🌿</div><p>No one has signed up yet.<br>Be the first to show your love!</p></div>';
+      countLabel.textContent = '0 entries';
+      return;
     }
 
-    // Remove old cards
-    list.querySelectorAll('.entry-card').forEach(el => el.remove());
+    if (filtered.length === 0) {
+      list.innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No entries in this category yet.</p></div>';
+    }
 
-    filtered.forEach((entry, idx) => {
+    filtered.forEach((entry) => {
+      const globalIdx = allEntries.indexOf(entry) + 1;
       const card = document.createElement('div');
       card.className = 'entry-card';
-      card.innerHTML = `
-        <div class="entry-num">${entries.indexOf(entry) + 1}</div>
-        <div class="entry-body">
-          <div class="entry-name">${escHtml(entry.name)}</div>
-          <div class="entry-dish">🍃 ${escHtml(entry.dish)}</div>
-          <div class="entry-meta">
-            <span class="tag">${escHtml(entry.cat)}</span>
-            ${entry.serves ? '<span class="tag">Serves ' + escHtml(entry.serves) + '</span>' : ''}
-          </div>
-          ${entry.notes ? '<div class="entry-note">⚠️ ' + escHtml(entry.notes) + '</div>' : ''}
-        </div>
-        <button class="entry-delete" onclick="deleteEntry(${entry.id})" title="Remove">✕</button>
-      `;
+      card.innerHTML =
+        '<div class="entry-num">' + globalIdx + '</div>' +
+        '<div class="entry-body">' +
+          '<div class="entry-name">' + esc(entry.name) + '</div>' +
+          '<div class="entry-dish">🍃 ' + esc(entry.dish) + '</div>' +
+          '<div class="entry-meta">' +
+            '<span class="tag">' + esc(entry.cat) + '</span>' +
+            (entry.serves ? '<span class="tag">Serves ' + esc(entry.serves) + '</span>' : '') +
+          '</div>' +
+          (entry.notes ? '<div class="entry-note">⚠️ ' + esc(entry.notes) + '</div>' : '') +
+        '</div>' +
+        '<button class="entry-delete" onclick="deleteEntry(' + entry.id + ')" title="Remove">✕</button>';
       list.appendChild(card);
     });
 
-    const total = entries.length;
-    countLabel.textContent = total + ' ' + (total === 1 ? 'entry' : 'entries');
+    const total = allEntries.length;
+    countLabel.textContent = total + (total === 1 ? ' entry' : ' entries');
   }
 
   function updateStats() {
-    document.getElementById('total-count').textContent = entries.length;
-    document.getElementById('mains-count').textContent = entries.filter(e => e.cat === 'Main Dish').length;
-    document.getElementById('sides-count').textContent = entries.filter(e => e.cat === 'Side Dish').length;
-    document.getElementById('desserts-count').textContent = entries.filter(e => e.cat === 'Dessert').length;
+    document.getElementById('total-count').textContent = allEntries.length;
+    document.getElementById('mains-count').textContent = allEntries.filter(e => e.cat === 'Main Dish').length;
+    document.getElementById('sides-count').textContent = allEntries.filter(e => e.cat === 'Side Dish').length;
+    document.getElementById('desserts-count').textContent = allEntries.filter(e => e.cat === 'Dessert').length;
   }
 
-  function escHtml(str) {
-    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  function esc(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
     t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
+    setTimeout(() => t.classList.remove('show'), 3200);
   }
+
+  // Auto-refresh every 30 seconds
+  setInterval(loadEntries, 30000);
 
   // Enter key submits
   document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && (e.target.id === 'input-name' || e.target.id === 'input-dish')) {
-      addEntry();
-    }
+    if (e.key === 'Enter' && ['input-name','input-dish','input-serves'].includes(e.target.id)) addEntry();
   });
+
+  // Initial load
+  loadEntries();
 </script>
 </body>
 </html>
